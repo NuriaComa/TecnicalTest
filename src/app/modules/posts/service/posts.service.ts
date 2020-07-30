@@ -9,15 +9,15 @@ import { CommentsI } from '../models/comments.interface';
 })
 export class PostsService {
 
-  private _postsInfo: BehaviorSubject<PostsI>;
+  private _postsInfo: BehaviorSubject<PostI[]>;
   private _postsCommentsInfo: BehaviorSubject<CommentsI>;
-  readonly postsInfoObs: Observable<PostsI>;
+  readonly postsInfoObs: Observable<PostI[]>;
   readonly postsCommentsInfoObs: Observable<CommentsI>;
 
   constructor(
     private _httpClient: HttpClient,
   ) {
-    this._postsInfo = new BehaviorSubject<PostsI>(null);
+    this._postsInfo = new BehaviorSubject<PostI[]>(null);
     this._postsCommentsInfo = new BehaviorSubject<CommentsI>(null);
     this.postsInfoObs = this._postsInfo.asObservable();
     this.postsCommentsInfoObs = this._postsCommentsInfo.asObservable();
@@ -31,10 +31,7 @@ export class PostsService {
       'https://dummyapi.io/data/api/post'
     ).subscribe(
       (responseData: PostsI) => {
-        if (responseData !== undefined) {
-          console.log(responseData)
-          this.getPostsData(responseData.data);
-        }
+        this.getPostsData(responseData.data || []);
       },
       (error: HttpErrorResponse) => {
         console.log('Error fetchPostsInfo request', error);
@@ -42,7 +39,8 @@ export class PostsService {
     );
   }
 
-  getPostsData(info: PostI[]) {
+  getPostsData(info): void {
+    console.log('info data', info);
     this._postsInfo.next(info);
   }
 

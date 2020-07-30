@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { PostsI } from '../../models/posts.interface';
+import { PostI, PostsI } from '../../models/posts.interface';
 import { PostsService } from '../../service/posts.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { PostsService } from '../../service/posts.service';
   styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent implements OnInit {
-  posts: PostsI;
+  posts: PostI[];
   private postsInfo$: Subscription;
 
   constructor(
@@ -29,7 +29,7 @@ export class PostsComponent implements OnInit {
     this.postsInfo$ = this._postsService
       .postsInfoObs
       .subscribe(
-        (postsInfo: PostsI) => {
+        (postsInfo: PostI[]) => {
           console.log('postsInfo', postsInfo);
           this.posts = postsInfo;
         }
