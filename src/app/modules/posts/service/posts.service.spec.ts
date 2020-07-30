@@ -67,7 +67,6 @@ describe('PostsService', () => {
     it('Success server response', (done) => {
       observable
         .subscribe((response: PostI[]) => {
-          console.log('response', response);
           expect(response[0].likes).toEqual(1);
           done();
         });

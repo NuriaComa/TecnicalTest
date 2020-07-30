@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { PostI, PostsI } from '../../models/posts.interface';
+import { PostI } from '../../models/posts.interface';
 import { PostsService } from '../../service/posts.service';
 
 @Component({

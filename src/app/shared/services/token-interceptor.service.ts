@@ -9,7 +9,7 @@ const APPID = 'ddJcOPwSICWf3Gvbkw4Q';
 @Injectable({
   providedIn: 'root'
 })
-export class TokenInterceptorService implements HttpInterceptor{
+export class TokenInterceptorService implements HttpInterceptor {
 
   constructor() { }
 

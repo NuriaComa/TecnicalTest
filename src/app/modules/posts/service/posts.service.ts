@@ -31,7 +31,7 @@ export class PostsService {
       'https://dummyapi.io/data/api/post'
     ).subscribe(
       (responseData: PostsI) => {
-        this.getPostsData(responseData.data || []);
+        this.getPostsData (responseData.data || []);
       },
       (error: HttpErrorResponse) => {
         console.log('Error fetchPostsInfo request', error);
@@ -39,8 +39,7 @@ export class PostsService {
     );
   }
 
-  getPostsData(info): void {
-    console.log('info data', info);
+  getPostsData(info: PostI[]): void {
     this._postsInfo.next(info);
   }
 
