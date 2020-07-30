@@ -1,0 +1,14 @@
+<div class="users" >
+  <div class="users__user" *ngFor="let user of users">
+    <users-card
+            [imageUrl]="user.picture"
+            [userId]="user.id"
+            [userTitle]="user.title"
+            [userName] = user.firstName
+            [userLastName] = user.lastName
+            [userEmail] = user.email
+    ></users-card>
+  </div>
+
+</div>
+

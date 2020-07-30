@@ -1,0 +1,12 @@
+<div class="comments" >
+  <div class="comments__comment" *ngFor="let comment of comments">
+    <comments-card
+            [userName] = comment.owner.firstName
+            [userLastName] = comment.owner.lastName
+            [commentDate] = comment.publishDate
+            [commentText] = comment.message
+
+    ></comments-card>
+  </div>
+
+</div>

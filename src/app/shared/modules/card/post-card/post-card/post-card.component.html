@@ -1,0 +1,8 @@
+<div class="card {{ cardClass }}">
+  <div class="card__name"> {{userName}} {{userLastName}}</div>
+  <span class="card__email">{{userEmail}}</span>
+  <img alt= "user image" class="card__img" src="{{imageUrl}}"/>
+  <span class="card__text">{{userText}}</span>
+  <span class="card__likes">{{userLikes}} Likes</span>
+  <a routerLink="{{userId}}/comments">Comments</a>
+</div>

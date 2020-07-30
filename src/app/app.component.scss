@@ -1,0 +1,15 @@
+.page {
+  padding: 25px;
+  &__nav {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    &-link {
+      color: #000;
+    }
+
+  }
+  &__container {
+
+  }
+}
