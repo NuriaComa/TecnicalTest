@@ -5,17 +5,17 @@ import { Observable, of, throwError, timer } from 'rxjs';
 import { debounce } from 'rxjs/operators';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { CommentsCardModule } from '../../../shared/modules/card/comments-card/comments-card.module';
-import { PostI, PostsI } from '../models/posts.interface';
+import { PostI,  PostsI } from '../models/posts.interface';
 
-const mockGetResponse: PostsI = {
-  data: [
-    {
+const mockGetResponse:  PostsI = {
+  data:  [
+     {
       id: '02sQzyrIxMzRUapxCNR7',
       image: 'https://img.dummyapi.io/photo-1570341224661-39af39637b08.jpg',
       likes: 1,
       link: null,
       owner: {
-        id: 'mHfQtRIKdbZiSGNcC1TO',
+        id:  'mHfQtRIKdbZiSGNcC1TO',
         email: 'kent.brewer@example.com',
         firstName: 'Kent',
         lastName: 'Brewer',
@@ -26,10 +26,10 @@ const mockGetResponse: PostsI = {
       tags: ['human', 'person', 'india'],
       text: 'When the dog looks at you'
     }
-  ],
-  limit: 0,
-  offset: 0,
-  page: 0
+  ] ,
+  limit:  0,
+  offset:  0,
+  page:  0
 };
 
 
@@ -53,8 +53,8 @@ describe('PostsService', () => {
     expect(service).toBeTruthy();
   });
 
-  describe('With server response', () => {
-    let observable: Observable<PostI[]>;
+  describe(' With server response', () => {
+    let observable: Observable< PostI[]>;
 
     beforeEach(() => {
       spyOn(httpClient, 'get').and.returnValue(of(mockGetResponse));
@@ -66,11 +66,11 @@ describe('PostsService', () => {
 
     it('Success server response', (done) => {
       observable
-        .subscribe((response: PostI[]) => {
-          expect(response[0].likes).toEqual(1);
+        .subscribe((response:  PostI[]) => {
+          expect(response[0] .likes).toEqual(1);
           done();
         });
       postService.fetchPostsInfo();
     });
   });
-});
+} );

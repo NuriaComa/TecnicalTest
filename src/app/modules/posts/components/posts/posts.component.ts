@@ -9,7 +9,7 @@ import { PostsService } from '../../service/posts.service';
   styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent implements OnInit {
-  posts: PostI[];
+  posts:  PostI[];
   private postsInfo$: Subscription;
 
   constructor(
@@ -29,7 +29,7 @@ export class PostsComponent implements OnInit {
     this.postsInfo$ = this._postsService
       .postsInfoObs
       .subscribe(
-        (postsInfo: PostI[]) => {
+        (postsInfo:  PostI[]) => {
           console.log('postsInfo', postsInfo);
           this.posts = postsInfo;
         }
