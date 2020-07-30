@@ -29,7 +29,7 @@ export class CommentsComponent implements OnInit {
   }
 
   _initComponents() {
-    this._postsService.getPostsComents(this.paramId);
+    this._postsService.getPostsComments(this.paramId);
     this.updatePostsInfo();
   }
 
