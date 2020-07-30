@@ -5,11 +5,11 @@ export interface UserI {
   title: string;
   firstName: string;
   lastName: string;
-  gender: string;
+  gender?: string;
   email: string;
-  dateOfBirth: string;
-  registerDate: string;
-  phone: string;
-  picture: string;
-  location: LocationI;
+  dateOfBirth?: string;
+  registerDate?: string;
+  phone?: string;
+  picture?: string;
+  location?: LocationI;
 }

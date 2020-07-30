@@ -8,11 +8,12 @@ export interface PostsI {
 }
 
 export interface PostI {
+  id: string;
   text: string;
   image: string;
   likes: number;
   link: string;
-  tags: [];
+  tags: string[];
   publishDate: string;
   owner: UserI;
 }
