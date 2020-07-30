@@ -1,4 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 .page {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
   padding: 25px;
   &__nav {
     display: flex;
