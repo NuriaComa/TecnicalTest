@@ -9,7 +9,7 @@ import { UserI } from '../../models/user.interface';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
-  users: UserI;
+  users: UserI[];
   private usersInfo$: Subscription;
 
   constructor(
@@ -29,8 +29,7 @@ export class UsersComponent implements OnInit {
     this.usersInfo$ = this._usersService
       .usersInfoObs
       .subscribe(
-        (usersInfo: UserI) => {
-          console.log('usersInfo', usersInfo);
+        (usersInfo: UserI[]) => {
           this.users = usersInfo;
         }
       );

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PostsI } from '../../models/posts.interface';
 import { Subscription } from 'rxjs';
 import { PostsService } from '../../service/posts.service';
-import { CommentsI } from '../../models/comments.interface';
+import { CommentI } from '../../models/comments.interface';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -12,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CommentsComponent implements OnInit {
   paramId: string;
-  comments: CommentsI;
+  comments: CommentI[];
   private commentsInfo$: Subscription;
 
   constructor(
@@ -37,8 +36,7 @@ export class CommentsComponent implements OnInit {
     this.commentsInfo$ = this._postsService
       .postsCommentsInfoObs
       .subscribe(
-        (commentsInfo: CommentsI) => {
-          console.log('commentsInfo', commentsInfo);
+        (commentsInfo: CommentI[]) => {
           this.comments = commentsInfo;
         }
       );
